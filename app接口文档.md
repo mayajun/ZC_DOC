@@ -2,11 +2,13 @@
 
 ## 说明：
 
-    - status_code 返回状态码 200（成功） 400（失败）
-    - message 返回信息
-    - data 返回数据
+* status\_code 返回状态码 200（成功） 400（失败）
+* message 返回信息
+* data 返回数据
 
-示例：注册\(用户端\)
+
+
+众筹列表
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api\_deals](http://API_DOMAIN/index.php?ctl=api_deals)
 
