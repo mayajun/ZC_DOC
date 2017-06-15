@@ -2,15 +2,15 @@
 
 ## 示例：注册\(用户端\)
 
-接口地址：http://API\_DOMAIN/index.php?ctl=api\_deals
+接口地址：[http://API\_DOMAIN/index.php?ctl=api\_deals](http://API_DOMAIN/index.php?ctl=api_deals)
 
-请求方式：POST
+请求方式：GET
 
 参 数：
 
-* 手机号\(username\) 
-* 验证码\(code\) 
-* 密码\(pwd\)
+* 分类id\(cate\_id\) 
+
+
 
 返回状态：200（成功）
 
