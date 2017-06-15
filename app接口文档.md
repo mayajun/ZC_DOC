@@ -2,7 +2,7 @@
 
 ## 示例：注册\(用户端\)
 
-接口地址：[http://59.110.4.227:1005/register](http://59.110.4.227:1005/register)
+接口地址：http://API\_DOMAIN/index.php?ctl=api\_deals
 
 请求方式：POST
 
