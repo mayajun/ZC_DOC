@@ -20,18 +20,18 @@
     "message": "成功",
     "data": [
         {
-            "name": "第三方",
-            "limit_price": "63.00",
-            "support_amount": "0.00",
-            "begin_time": "1496886153",
-            "end_time": "1498354957",
-            "support_count": 0,
-            "is_hot": 0,
-            "is_special": 0,
-            "user_name": "fanwe",
-            "user_avatar": "http://www.zc.local.com/public/avatar/default/noavatar_7.JPG",
-            "per": 0,
-            "sur": 0
+            "name": "第三方", // 众筹项目名称
+            "limit_price": "63.00", // 目标金额
+            "support_amount": "0.00", // 已筹金额
+            "begin_time": "1496886153", // 开始时间
+            "end_time": "1498354957", // 结束时间
+            "support_count": 0, // 支持人数
+            "is_hot": 0, // 是否热门 0 否 1 是
+            "is_special": 0, // 是否置顶 0 否 1 是
+            "user_name": "fanwe", // 发起人名字
+            "user_avatar": "http://www.zc.local.com/public/avatar/default/noavatar_7.JPG", // 发起人头像
+            "per": 0, // 筹集金额百分比
+            "sur": 0 // 剩余天数
         },
          {
             "name": "拥有自己的咖啡馆",
