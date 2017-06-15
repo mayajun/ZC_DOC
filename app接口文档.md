@@ -1,6 +1,12 @@
 # app接口文档
 
-## 示例：注册\(用户端\)
+## 说明：
+
+    - status_code 返回状态码 200（成功） 400（失败）
+    - message 返回信息
+    - data 返回数据
+
+示例：注册\(用户端\)
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api\_deals](http://API_DOMAIN/index.php?ctl=api_deals)
 
@@ -51,27 +57,7 @@
 }
 ```
 
-## 获取验证码
-
-接口地址：[http://59.110.4.227:1005/captcha](http://59.110.4.227:1005/captcha)
-
-请求方式：GET
-
-参 数：
-
-* 手机号\(phone\) 
-* 类型\(type 注册时不传,忘记密码和修改密码时传 pwd\)
-
-返回状态：200（成功）
-
-返 回 值：
-
-    {
-    ```
-    "status_code": 200,
-    "message": "成功"
-    ```
-    }
+## 
 
 
 
