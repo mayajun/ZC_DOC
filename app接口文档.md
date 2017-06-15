@@ -8,7 +8,7 @@
 
 
 
-众筹列表
+* ### 众筹列表
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api\_deals](http://API_DOMAIN/index.php?ctl=api_deals)
 
@@ -17,8 +17,6 @@
 参 数：
 
 * 分类id\(cate\_id\) 
-
-返回状态：200（成功）
 
 返 回 值：
 
