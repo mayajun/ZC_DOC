@@ -16,7 +16,8 @@
 
 参 数：
 
-* 分类id\(cate\_id\) 
+* 分类id\(cate\_id\) int 
+* 页数\(page\) int
 
 返 回 值：
 
