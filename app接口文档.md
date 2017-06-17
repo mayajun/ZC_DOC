@@ -57,6 +57,113 @@
     ]
 }
 ```
+##
+
+* ### 个人中心 个人设置页
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api\_user&act=index](http://API_DOMAIN/index.php?ctl=api_user&act=index)
+
+请求方式：GET
+
+参 数：
+
+* 用户id/(id/_id\) int 
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "19",
+            "user_name": "test",
+            "age": "20",
+            "mobile": "123",
+            "head": "/public/avatar/default/noavatar_9.JPG",
+            "bank": "(尾号)"
+        },
+        [
+            {
+                "id": "21",
+                "user_id": "19",
+                "province": "北京",
+                "city": "北京",
+                "address": "亦庄",
+                "mobile": "110",
+                "zip": "",
+                "consignee": "njw",
+                "is_default": "0"
+            },
+            {
+                "id": "22",
+                "user_id": "19",
+                "province": "北京",
+                "city": "北京",
+                "address": "亦庄",
+                "mobile": "110",
+                "zip": "",
+                "consignee": "njw",
+                "is_default": "1"
+            }
+        ]
+    ]
+}
+```
+
+## 
+
+* ### 个人中心 修改年龄、电话
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api\_user&act=update](http://API_DOMAIN/index.php?ctl=api_user&act=update)
+
+请求方式：GET
+
+参 数：
+
+* 用户id/(id/_id) int 
+* 若修改年龄 age/（age/_age） int
+* 若修改电话 mobile/(mobile/_mobile) int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+```
+
+## 
+
+* ### 个人中心 修改或添加收货地址
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api\_user&act=addressEdit](http://API_DOMAIN/index.php?ctl=api_user&act=addressEdit)
+
+请求方式：GET
+
+参 数：
+
+* 用户id/(user_id/_user_id) int 
+* 若修改 修改的地址的id id/（id/_id） int  若添加 不用传递地址id（id/_id）
+* 收件人consignee/(consignee/_consignee) str
+* 联系方式mobile/(mobile/_mobile) int
+* 所在省地区province/(province/_province) str
+* 所在市地区city/(city/_city) str
+* 详细地址address/(address/_address) str
+* 是否设为默认地址is_default(is_default/_value) int 0-不是默认；1-默认地址
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+```
 
 ## 
 
