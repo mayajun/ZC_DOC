@@ -167,5 +167,59 @@
 
 ## 
 
+* ### 我的关注列表
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api\_user&act=myFocus](http://API_DOMAIN/index.php?ctl=api_user&act=myFocus)
+
+请求方式：GET
+
+参 数：
+
+* 用户id/(user_id/_user_id) int 
+* 页数page/(page/_page) int 用于下拉加载
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "58",
+            "name": "流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！",
+            "image": "./public/attachment/201211/07/11/438813e6d75cb84c6b0df8ffbad7aa8c31.jpg",
+            "is_effect": "1",
+            "begin_time": "1352145022",
+            "end_time": "1497297000",
+            "is_success": "1"
+        }
+    ]
+}
+```
+
+## 
+
+* ### 退出登录
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api\_user&act=loginout](http://API_DOMAIN/index.php?ctl=api_user&act=loginout)
+
+请求方式：GET
+
+参 数：
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+```
+
+## 
+
 
 
