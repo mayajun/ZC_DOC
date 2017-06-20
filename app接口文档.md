@@ -78,24 +78,24 @@
     "message": "成功",
     "data": [
         {
-            "id": "19",
-            "user_name": "test",
-            "age": "20",
-            "mobile": "123",
-            "head": "/public/avatar/default/noavatar_9.JPG",
-            "bank": "(尾号)"
+            "id": "19", //用户id
+            "user_name": "test", //用户名
+            "age": "20", //用户年龄
+            "mobile": "123", //用户手机号
+            "head": "/public/avatar/default/noavatar_9.JPG", //用户头像地址
+            "bank": "(尾号)" //用户银行账号
         },
         [
             {
-                "id": "21",
-                "user_id": "19",
-                "province": "北京",
-                "city": "北京",
-                "address": "亦庄",
-                "mobile": "110",
-                "zip": "",
-                "consignee": "njw",
-                "is_default": "0"
+                "id": "21", //收货地址id
+                "user_id": "19", //用户id
+                "province": "北京", //收货地址-省
+                "city": "北京", //收货地址-市
+                "address": "亦庄", //收货地址-详细地址
+                "mobile": "110", //收货地址-收货人电话
+                "zip": "", 
+                "consignee": "njw", //收货地址-收货人姓名
+                "is_default": "0" //收货地址-是否默认地址
             },
             {
                 "id": "22",
@@ -185,13 +185,13 @@
     "message": "成功",
     "data": [
         {
-            "id": "58",
-            "name": "流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！",
-            "image": "./public/attachment/201211/07/11/438813e6d75cb84c6b0df8ffbad7aa8c31.jpg",
-            "is_effect": "1",
-            "begin_time": "1352145022",
-            "end_time": "1497297000",
-            "is_success": "1"
+            "id": "58", //项目id
+            "name": "流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！", //项目标题
+            "image": "./public/attachment/201211/07/11/438813e6d75cb84c6b0df8ffbad7aa8c31.jpg", //项目图片
+            "is_effect": "1", //是否通过审核
+            "begin_time": "1352145022", //项目开始实时间
+            "end_time": "1497297000", //项目结束时间
+            "is_success": "1" //是否集资成功
         }
     ]
 }
@@ -253,6 +253,111 @@
             "is_delete": "0"
         }
     ]
+}
+```
+
+---
+
+* ### 发布-顶级分类
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_publish&act=index](http://www.zc.local.com/index.php?ctl=api_publish&act=index)
+
+请求方式：GET
+
+参 数：
+
+无
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "11", //顶级分类id
+            "name": "百岁公益", //顶级分类标题
+            "sort": "11", //顶级分类排序
+            "pid": "0", //顶级分类父级id
+            "is_delete": "0", //是否被删除
+            "thumb": "", //顶级分类图片
+            "description": "" //顶级分类简介
+        }
+    ]
+}
+```
+
+---
+
+* ### 发布-二级分类
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_publish&act=child](http://www.zc.local.com/index.php?ctl=api_publish&act=child&pid=_pid)
+
+请求方式：GET
+
+参 数：
+
+父级分类id（pid/_pid) int
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "12", //子分类id
+            "name": "大病救助", //子分类标题
+            "sort": "12", //子分类排序
+            "pid": "11", //父分类id
+            "is_delete": "0", //是否被删除
+            "thumb": "", //子分类图片
+            "description": "" //子分类id简介
+        }
+    ]
+}
+```
+
+---
+
+* ### 发布
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_publish&act=publish](http://www.zc.local.com/index.php?ctl=api_publish&act=publish)
+
+请求方式：POST
+
+参 数：
+
+* 父级分类id（pid/_pid) int
+* (发布不同，传递的参数不同)
+* 大病救助：
+* 上级分类id（cate_id/_cate_id) int
+* 标题name（name/_name）str
+* 简介brief(brief/_brief) str
+* 目标金额limit_price(limit_price/_limit_price) str
+* 详情description(description/_description) str
+* 图片images(images/_images) array
+* 房产数量house_num int
+* 房产价值house_price int
+* 房产状态houst_status int（0-未变卖，1-已变卖）
+* 汽车数量car_num int
+* 汽车价值car_price int
+* 汽车状态car_status int（0-未变卖，1-已变卖）
+* 是否该买商业重疾保险is_business int （0-否，1-是）
+* 是否按时缴纳医保is_medical int （0-否，1-是）
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
 }
 ```
 
