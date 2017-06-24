@@ -389,5 +389,116 @@ upload[](文件资源类型)
 }
 ```
 
+---
+
+* ### 创建订单
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_order&act=createOrder](http://API\_DOMAIN/index.php?ctl=api_order&act=createOrder)
+
+请求方式：get
+
+参 数：
+
+* 产品id：deal_id int
+* 产品单价：money float(10,2)
+* 产品优惠：coupon float(10,2)
+* 产品数量：count int
+* 订单状态：status string unpaid 待支付 paid 待发货(已付款) sent 待收货(已发货) received 已收货
+* 支付方式：pay_way string
+* 收货地址：address string
+* 备注：mark string
+
+
+返 回 值：
+
+```
+
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
+---
+
+* ### 获取订单列表
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_order&act=orderList](http://API\_DOMAIN/index.php?ctl=api_order&act=orderList)
+
+请求方式：get
+
+参 数：
+
+* 订单状态：status string unpaid 待支付 paid 待发货(已付款) sent 待收货(已发货) received 已收货
+(查询全部不传值)
+
+
+返 回 值：
+
+```
+
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "4", // 订单id 
+            "deal_id": "5", // 产品id
+            "money": "200.00", // 产品单价
+            "coupon": "5.50", // 优惠价格
+            "count": "2", // 产品数量
+            "status": "unpaid", // 订单状态
+            "pay_way": "ailpay", // 支付方式
+            "address": "北京", // 收货地址
+            "mark": "备注", // 备注
+            "deleted_at": "0", // 删除时间
+            "created_at": "1498317171", // 创建时间（下单时间）
+            "updated_at": "1498317171" // 修改时间
+        },
+        {
+            "id": "3",
+            "deal_id": "5",
+            "money": "200.00",
+            "coupon": "5.50",
+            "count": "2",
+            "status": "unpaid",
+            "pay_way": "ailpay",
+            "address": "北京",
+            "mark": "备注",
+            "deleted_at": "0",
+            "created_at": "1498316316",
+            "updated_at": "1498316316"
+        }
+    ]
+}
+
+
+```
+
+* ### 删除订单
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_order&act=delOrder](http://API\_DOMAIN/index.php?ctl=api_order&act=delOrder)
+
+请求方式：get
+
+参 数：
+
+* 订单id：id int
+
+
+返 回 值：
+
+```
+
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
 
 
