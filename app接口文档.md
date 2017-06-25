@@ -500,5 +500,135 @@ upload[](文件资源类型)
 
 ```
 
+---
+
+* ### 获取已绑定银行卡列表
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=bankLists](http://API\_DOMAIN/index.php?ctl=api_user&act=bankLists)
+
+请求方式：get
+
+参 数：
+
+* 用户ID：user_id int 
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "7", //银行卡id
+            "bank_name": "", //银行名称
+            "bankcard": "123456789123456", //银行卡号
+            "real_name": "王大锤", //银行卡开户名
+            "genre": "1" //类别 1-个人 2-对公
+        },
+        {
+            "id": "8",
+            "bank_name": "",
+            "bankcard": "123456789123456",
+            "real_name": "王大锤",
+            "genre": "1"
+        }
+    ]
+}
+
+
+```
+
+---
+
+* ### 添加银行卡页面，获取银行列表
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=bank](http://API\_DOMAIN/index.php?ctl=api_user&act=bank)
+
+请求方式：get
+
+参 数：
+
+* 无
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "1", //银行ID
+            "name": "中国工商银行" //银行名称
+        },
+        {
+            "id": "2",
+            "name": "中国农业银行"
+        }
+    ]
+}
+
+
+```
+
+---
+
+* ### 执行添加银行卡页面
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=bankAdd](http://API\_DOMAIN/index.php?ctl=api_user&act=bankAdd)
+
+请求方式：post
+
+参 数：
+
+* 用户ID user_id
+* 业务所属 genre 1-个人；2-对公
+* 银行ID bank_id
+* 银行名称 bank_name
+* 开户名 real_name
+* 银行卡号 bankcard
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+
+```
+
+---
+
+* ### 删除已绑定的银行卡
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=bankDel](http://API\_DOMAIN/index.php?ctl=api_user&act=bankDel)
+
+请求方式：get
+
+参 数：
+
+* 用户ID user_id
+* 银行卡ID id
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+
+```
+
 
 
