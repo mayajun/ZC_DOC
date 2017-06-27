@@ -630,5 +630,31 @@ upload[](文件资源类型)
 
 ```
 
+---
+
+* ### 修改订单状态
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_order&act=updateOrder](http://API\_DOMAIN/index.php?ctlapi_order&act=updateOrder)
+
+请求方式：get
+
+参 数：
+
+* 订单ID id
+* 状态值 status  unpaid 待支付 | paid 待发货(已付款) | sent 待收货(已发货) | received 已收货
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+
+```
+
 
 
