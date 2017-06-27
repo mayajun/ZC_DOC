@@ -400,12 +400,17 @@ upload[](文件资源类型)
 参 数：
 
 * 产品id：deal_id int
+* 用户id：user_id int
 * 产品单价：money float(10,2)
 * 产品优惠：coupon float(10,2)
 * 产品数量：count int
 * 订单状态：status string unpaid 待支付 paid 待发货(已付款) sent 待收货(已发货) received 已收货
 * 支付方式：pay_way string
-* 收货地址：address string
+* 收货人姓名: consignee_name string
+* 收货人手机: consignee_tel string
+* 收货地址: address string
+* 物流公司: logistics_company string
+* 物流单号: logistics_number string
 * 备注：mark string
 
 
@@ -431,8 +436,8 @@ upload[](文件资源类型)
 
 参 数：
 
-* 订单状态：status string unpaid 待支付 paid 待发货(已付款) sent 待收货(已发货) received 已收货
-(查询全部不传值)
+* 订单状态：status string unpaid 待支付 paid 待发货(已付款) sent 待收货(已发货) received 待评价(已收货) completed 已完成 refund 已退款
+(查询全部订单不用传值)
 
 
 返 回 值：
@@ -444,32 +449,43 @@ upload[](文件资源类型)
     "message": "成功",
     "data": [
         {
-            "id": "4", // 订单id 
-            "deal_id": "5", // 产品id
-            "money": "200.00", // 产品单价
-            "coupon": "5.50", // 优惠价格
-            "count": "2", // 产品数量
+            "id": "8",  
+            "order_sn": "5381498568039473", // 订单编号
+            "deal_id": "55", // 商品id
+            "user_id": "19", // 用户id
+            "money": "200.00", // 商品单价
+            "real_money": "395", // 实际支付
+            "coupon": "5.50", // 优惠金额
+            "count": "2", // 商品数量
             "status": "unpaid", // 订单状态
             "pay_way": "ailpay", // 支付方式
-            "address": "北京", // 收货地址
+            "consignee_name": "test", // 收件人姓名
+            "consignee_tel": "18888888888", // 收件人手机号
+            "address": "海淀", // 收件地址
+            "logistics_company": "", // 快递公司名称
+            "logistics_number": "", // 快递单号
             "mark": "备注", // 备注
+            "evaluate": "", // 评价内容
+            "star": "0", // 评价星级 1-5星
+            "paid_at": "0", // 支付时间
+            "sent_at": "0", // 发货时间
+            "received_at": "0", // 收货时间
+            "refund_at": "0", // 退款时间
+            "evaluated_at": "0", // 评价时间
             "deleted_at": "0", // 删除时间
-            "created_at": "1498317171", // 创建时间（下单时间）
-            "updated_at": "1498317171" // 修改时间
-        },
-        {
-            "id": "3",
-            "deal_id": "5",
-            "money": "200.00",
-            "coupon": "5.50",
-            "count": "2",
-            "status": "unpaid",
-            "pay_way": "ailpay",
-            "address": "北京",
-            "mark": "备注",
-            "deleted_at": "0",
-            "created_at": "1498316316",
-            "updated_at": "1498316316"
+            "created_at": "1498568039", // 订单创建时间
+            "updated_at": "1498568039", // 操作更新时间
+            "dealInfo": [ // 商品信息
+                {
+                    "id": "55", // 商品id
+                    "name": "原创DIY桌面游戏《功夫》《黄金密码》期待您的支持", // 商品名称
+                    "image": "./public/attachment/201211/07/10/021e2f6812298468cfab78cbd07b90ee85.jpg" // 商品图片
+                }
+            ],
+            "userInfo": {
+                "user_name": "test", // 用户姓名
+                "avatar": "http://www.zc.local.comhttp://www.zc.local.com/public/avatar/default/noavatar_9.JPG" // 用户头像
+            }
         }
     ]
 }
@@ -632,7 +648,7 @@ upload[](文件资源类型)
 
 ---
 
-* ### 修改订单状态
+* ### 更新订单信息
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_order&act=updateOrder](http://API\_DOMAIN/index.php?ctlapi_order&act=updateOrder)
 
@@ -641,8 +657,19 @@ upload[](文件资源类型)
 参 数：
 
 * 订单ID id
-* 状态值 status  unpaid 待支付 | paid 待发货(已付款) | sent 待收货(已发货) | received 已收货
-
+* 状态值 status 
+    * unpaid 待支付 (不传这个值)
+    * paid 待发货(付款成功时)
+        * trade_sn 交易号
+    * sent 待收货(商户发货时)
+        * logistics_company 快递公司
+        * logistics_number 快递单号
+    * received 待评价(用户确认收货时)
+    * completed 已完成(用户评价时)
+        * evaluate 评价内容
+        * star 评价星级 整数一位 1-5
+    * refund 退款(用户申请退款时)
+        * why_refund 退款原因
 
 返 回 值：
 
