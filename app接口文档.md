@@ -79,9 +79,11 @@
     "data": [
         {
             "id": "19", //用户id
-            "user_name": "test", //用户名
+            "nickname": "test", //昵称
             "age": "20", //用户年龄
             "mobile": "123", //用户手机号
+            "thirdbind": "0", //第三方绑定类别 0-未绑定；1-qq；2-微信；3-微博
+            "thirdnum": "", //第三方账号
             "head": "/public/avatar/default/noavatar_9.JPG", //用户头像地址
             "bank": "(尾号)" //用户银行账号
         },
@@ -115,7 +117,7 @@
 
 ---
 
-* ### 个人中心 修改年龄、电话
+* ### 个人中心 修改昵称、年龄、电话、第三方账号
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api\_user&act=update](http://API_DOMAIN/index.php?ctl=api_user&act=update)
 
@@ -124,8 +126,11 @@
 参 数：
 
 * 用户id/(id/_id) int 
+* 若修改昵称 nickname/（nickname/_nickname） str
 * 若修改年龄 age/（age/_age） int
 * 若修改电话 mobile/(mobile/_mobile) int
+* 若修改第三方账号 类别： thirdbind/(thirdbind/_thirdbind) int  0-未绑定；1-qq；2-微信；3-微博
+* 若修改第三方账号 账号： thirdnum/(thirdnum/_thirdnum) str
 
 返 回 值：
 
@@ -162,6 +167,32 @@
     "message": "成功",
     "data": []
 }
+```
+
+---
+
+* ### 删除收货地址
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=addressDel](http://API\_DOMAIN/index.php?ctl=api_user&act=addressDel)
+
+请求方式：get
+
+参 数：
+
+* 用户ID user_id
+* 收货地址ID id
+
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+
 ```
 
 ---
