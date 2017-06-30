@@ -683,5 +683,155 @@ upload[](文件资源类型)
 
 ```
 
+---
+
+* ### 创建一起帮
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=share](http://API\_DOMAIN/index.php?ctl=api_share&act=share)
+
+请求方式：get
+
+参 数：
+
+* 用户id user_id
+* 众筹id deal_id
+* 分享团队或个人名称 share_name
+* 一起帮详情 share_des
+* 分享目标金额 share_goal
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+
+```
+
+---
+
+* ### 获取我的一起帮列表
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=myShare](http://API\_DOMAIN/index.php?ctl=api_share&act=myShare)
+
+请求方式：get
+
+参 数：
+
+* 用户id user_id
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "1", // 一起帮id
+            "user_id": "19", // 用户id
+            "deal_id": "55", // 众筹id
+            "share_name": "一起帮", // 分享团队或个人名称
+            "share_des": "", // 一起帮描述
+            "share_raise": "0.00", // 筹集金额进度
+            "share_goal": "200.00", // 一起帮目标金额
+            "created_at": "1498791112" // 创建时间
+        }
+    ]
+}
+
+```
+
+---
+
+* ### 获取一起帮详情
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=shareDetail](http://API\_DOMAIN/index.php?ctl=api_share&act=shareDetail)
+
+请求方式：get
+
+参 数：
+
+* 一起帮id id
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": {
+        "id": "1",
+        "user_id": "19",
+        "deal_id": "55",
+        "share_name": "一起帮",
+        "share_des": "",
+        "share_raise": "0.00",
+        "share_goal": "200.00",
+        "created_at": "1498791112",
+        "dealInfo": {
+            "name": "原创DIY桌面游戏《功夫》《黄金密码》期待您的支持",
+            "image": "http://www.zc.local.com/public/attachment/201211/07/10/021e2f6812298468cfab78cbd07b90ee85.jpg"
+        }
+    }
+}
+
+```
+
+
+---
+
+* ### 修改一起帮
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=updateShare](http://API\_DOMAIN/index.php?ctl=api_share&act=updateShare)
+
+请求方式：get
+
+参 数：
+
+* 一起帮id id
+* 分享团队或个人名称 share_name
+* 发起说明 share_des
+* 分享目标金额 share_goal
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
+---
+
+* ### 修改一起帮
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=delOrder](http://API\_DOMAIN/index.php?ctl=api_share&act=delOrder)
+
+请求方式：get
+
+参 数：
+
+* 一起帮id id
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
+
+
 
 
