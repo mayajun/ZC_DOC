@@ -862,6 +862,129 @@ upload[](文件资源类型)
 
 ```
 
+---
+
+* ### 创建保险类型
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_insurance&act=createInsurance](http://API\_DOMAIN/index.php?ctl=api_insurance&act=createInsurance)
+
+请求方式：get
+
+参 数：
+
+1. 当新建保单与之前不同时：
+    * 保单名称 name
+    * 展示图片 image
+    * 保单限额 term
+    * 保险费 money
+    * 年龄最小值 age_min
+    * 年龄最大值 age_max
+    * 年限 limit_time
+    * 观察期 observation
+    * 保险流程 flow
+    * 成功案例 cases
+    * 创建时间 created_at
+    * 更新时间 updated_at
+2. 当新建保单与之前某保单相同时
+    * 同属id(父级保单的id) pid
+    * 保单限额 term
+    * 保险费 money
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
+---
+
+* ### 获取保险类型列表
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_insurance&act=insuranceList](http://API\_DOMAIN/index.php?ctl=api_insurance&act=insuranceList)
+
+请求方式：get
+
+参 数：
+
+* 状态值 status (非必需字段，可选传值 normal 正常 deleted 已删除)
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "4", // 保单类型id
+            "pid": "0", // 同属id
+            "insurance_no": "3231498844405701", // 保单类型编号
+            "name": "保单名称", // 保单名称
+            "image": "图片", // 保单图片
+            "money": "5.21", // 保费
+            "term": "50", // 保单限额
+            "age_min": "11", // 年龄最小值
+            "age_max": "60", // 年龄最大值
+            "limit_time": "2", // 年限
+            "observation": "90", // 观察期
+            "status": "normal", // 状态
+            "flow": "流程", // 保险流程
+            "cases": "成功案例", // 成功案例
+            "created_at": "1498844405", // 创建时间
+            "updated_at": "1498844405", // 更新时间
+        },
+        {
+            "id": "2",
+            "pid": "0",
+            "insurance_no": "2147483647",
+            "name": "保单名称",
+            "image": "图片",
+            "money": "5.21",
+            "term": "50",
+            "age_min": "11",
+            "age_max": "60",
+            "limit_time": "2",
+            "observation": "90",
+            "status": "normal",
+            "flow": "流程",
+            "cases": "成功案例",
+            "created_at": "1498844291",
+            "updated_at": "1498844291",
+        }
+    ]
+}
+
+```
+
+
+---
+
+* ### 删除保险类型
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_insurance&act=delInsurance](http://API\_DOMAIN/index.php?ctl=api_insurance&act=delInsurance)
+
+请求方式：get
+
+参 数：
+
+* 保单类型id id int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
 
 
 
