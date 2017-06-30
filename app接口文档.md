@@ -841,7 +841,7 @@ upload[](文件资源类型)
 
 ---
 
-* ### 修改一起帮
+* ### 删除一起帮
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=delOrder](http://API\_DOMAIN/index.php?ctl=api_share&act=delOrder)
 
