@@ -68,7 +68,6 @@
 
 参 数：
 
-* 用户id/(id/_id\) int 
 
 返 回 值：
 
@@ -125,7 +124,6 @@
 
 参 数：
 
-* 用户id/(id/_id) int 
 * 若修改昵称 nickname/（nickname/_nickname） str
 * 若修改年龄 age/（age/_age） int
 * 若修改电话 mobile/(mobile/_mobile) int
@@ -150,7 +148,6 @@
 
 参 数：
 
-* 用户id/(user_id/_user_id) int 
 * 若修改 修改的地址的id id/（id/_id） int  若添加 不用传递地址id（id/_id）
 * 收件人consignee/(consignee/_consignee) str
 * 联系方式mobile/(mobile/_mobile) int
@@ -179,7 +176,6 @@
 
 参 数：
 
-* 用户ID user_id
 * 收货地址ID id
 
 
@@ -205,7 +201,6 @@
 
 参 数：
 
-* 用户id/(user_id/_user_id) int 
 * 页数page/(page/_page) int 用于下拉加载
 
 返 回 值：
@@ -557,7 +552,6 @@ upload[](文件资源类型)
 
 参 数：
 
-* 用户ID：user_id int 
 
 
 返 回 值：
@@ -631,7 +625,6 @@ upload[](文件资源类型)
 
 参 数：
 
-* 用户ID user_id
 * 业务所属 genre 1-个人；2-对公
 * 银行ID bank_id
 * 银行名称 bank_name
@@ -661,7 +654,6 @@ upload[](文件资源类型)
 
 参 数：
 
-* 用户ID user_id
 * 银行卡ID id
 
 
@@ -720,14 +712,15 @@ upload[](文件资源类型)
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=share](http://API\_DOMAIN/index.php?ctl=api_share&act=share)
 
-请求方式：POST
+请求方式：get
 
 参 数：
 
-* deal_id int 众筹id
-* share_name string 分享团队或个人名称
-* share_des string 一起帮详情 
-* share_goal int 分享目标金额 
+* 用户id user_id
+* 众筹id deal_id
+* 分享团队或个人名称 share_name
+* 一起帮详情 share_des
+* 分享目标金额 share_goal
 
 返 回 值：
 
@@ -747,11 +740,11 @@ upload[](文件资源类型)
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=myShare](http://API\_DOMAIN/index.php?ctl=api_share&act=myShare)
 
-请求方式：GET
+请求方式：get
 
 参 数：
 
-无
+* 用户id user_id
 
 返 回 值：
 
@@ -766,12 +759,9 @@ upload[](文件资源类型)
             "deal_id": "55", // 众筹id
             "share_name": "一起帮", // 分享团队或个人名称
             "share_des": "", // 一起帮描述
-            "help_num": "0", // 帮助人数
             "share_raise": "0.00", // 筹集金额进度
             "share_goal": "200.00", // 一起帮目标金额
             "created_at": "1498791112" // 创建时间
-            "deal_image": "http://www.zc.local.com/public/attachment/201211/07/10/021e2f6812298468cfab78cbd07b90ee85.jpg", // 众筹图片
-            "completion": "0%" // 完成度
         }
     ]
 }
@@ -784,7 +774,7 @@ upload[](文件资源类型)
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=shareDetail](http://API\_DOMAIN/index.php?ctl=api_share&act=shareDetail)
 
-请求方式：POST
+请求方式：get
 
 参 数：
 
@@ -797,94 +787,31 @@ upload[](文件资源类型)
     "status_code": 200,
     "message": "成功",
     "data": {
-        "id": "3", // 一起帮id
-        "user_id": "1", // 用户id
-        "deal_id": "55", // 众筹id
-        "share_name": "一起帮", // 一起帮名称
-        "share_des": "一起帮详情", // 一起帮详情
-        "help_num": "0", // 帮助人数
-        "share_raise": "0.00", // 已筹集金额
-        "share_goal": "200.00", // 筹集目标
-        "created_at": "1498890954", // 创建时间
+        "id": "1",
+        "user_id": "19",
+        "deal_id": "55",
+        "share_name": "一起帮",
+        "share_des": "",
+        "share_raise": "0.00",
+        "share_goal": "200.00",
+        "created_at": "1498791112",
         "dealInfo": {
-            "name": "原创DIY桌面游戏《功夫》《黄金密码》期待您的支持", // 众筹名称
-            "image": "http://www.zc.local.com/public/attachment/201211/07/10/021e2f6812298468cfab78cbd07b90ee85.jpg" // 众筹图片
+            "name": "原创DIY桌面游戏《功夫》《黄金密码》期待您的支持",
+            "image": "http://www.zc.local.com/public/attachment/201211/07/10/021e2f6812298468cfab78cbd07b90ee85.jpg"
         }
     }
 }
 
 ```
 
----
-
-* ### 获取一起帮支持信息
-
-接口地址：[http://API\_DOMAIN/index.php?ctl=api_help&act=helpList](http://API\_DOMAIN/index.php?ctl=api_help&act=helpList)
-
-请求方式：POST
-
-参 数：
-
-* share_id int 一起帮id
-
-返 回 值：
-
-```
-{
-    "status_code": 200,
-    "message": "成功",
-    "data": {
-        "share_name": "rrr",
-        "share_des": "rrrrrrrr",
-        "share_raise": "60.00",
-        "share_goal": "1000.00",
-        "userInfo": {
-            "user_name": "test",
-            "avatar": "http://www.zc.local.com/public/avatar/default/noavatar_9.JPG"
-        },
-        "help_info": [
-            {
-                "id": "1",
-                "deal_id": "55",
-                "share_id": "3",
-                "user_id": "19",
-                "help_money": "20.00",
-                "help_text": "帮助",
-                "help_trade_no": "3249857829475734659283",
-                "created_at": "0",
-                "userInfo": {
-                    "user_name": "test",
-                    "avatar": "http://www.zc.local.com/public/avatar/default/noavatar_9.JPG"
-                }
-            },
-            {
-                "id": "2",
-                "deal_id": "55",
-                "share_id": "3",
-                "user_id": "19",
-                "help_money": "20.00",
-                "help_text": "帮助",
-                "help_trade_no": "3249857829475734659283",
-                "created_at": "0",
-                "userInfo": {
-                    "user_name": "test",
-                    "avatar": "http://www.zc.local.com/public/avatar/default/noavatar_9.JPG"
-                }
-            }
-        ]
-    }
-}
-
-```
-
 
 ---
 
-* ### 编辑一起帮
+* ### 修改一起帮
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_share&act=updateShare](http://API\_DOMAIN/index.php?ctl=api_share&act=updateShare)
 
-请求方式：POST
+请求方式：get
 
 参 数：
 
@@ -1061,7 +988,6 @@ upload[](文件资源类型)
 
 参 数：
 
-* 用户ID user_id int
 
 返 回 值：
 
@@ -1093,7 +1019,6 @@ upload[](文件资源类型)
 
 参 数：
 
-* 用户ID user_id int
 
 返 回 值：
 
@@ -1118,7 +1043,6 @@ upload[](文件资源类型)
 
 参 数：
 
-* 用户ID user_id int
 * 页数 page int
 
 返 回 值：
