@@ -1051,6 +1051,160 @@ upload[](文件资源类型)
 ```
 
 
+---
+
+* ### 用户中心 钱包明细
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=credit](http://API\_DOMAIN/index.php?ctl=api_user&act=credit)
+
+请求方式：get
+
+参 数：
+
+* 用户ID user_id int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": {
+        "total": "0.00", //钱包余额
+        "lists": [
+            {
+                "id": "130", //明细ID
+                "log_info": "支持流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！项目支付", //明细备注
+                "log_time": "1352231631",//完成时间
+                "money": "-500.0000" //交易金额
+            }
+        ]
+    }
+}
+```
+
+---
+
+* ### 用户爱心值
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=loveValue](http://API\_DOMAIN/index.php?ctl=api_user&act=loveValue)
+
+请求方式：get
+
+参 数：
+
+* 用户ID user_id int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": {
+        "loveNum": "0", //爱心值
+        "num": "8" //已超越人数
+    }
+}
+```
+
+---
+
+* ### 用户爱心值记录
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=lovelog](http://API\_DOMAIN/index.php?ctl=api_user&act=lovelog)
+
+请求方式：get
+
+参 数：
+
+* 用户ID user_id int
+* 页数 page int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+        {
+            "id": "130", //记录ID
+            "log_info": "支持流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！项目支付", //记录备注
+            "log_time": "1352231631", //记录时间
+            "score": "0", //爱心值
+        }
+    ]
+}
+```
+
+---
+
+* ### 用户红包记录
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=red](http://API\_DOMAIN/index.php?ctl=api_user&act=red)
+
+请求方式：get
+
+参 数：
+
+* 页数 page int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": {
+        "total": "0.00", //红包总金额
+        "lists": [
+            {
+                "id": "130", //红包记录id
+                "log_info": "支持流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！项目支付", //备注
+                "log_time": "1352231631", //时间
+                "money": "0.00", //红包金额
+                "from_user_id": "0" //红包来自哪个用户
+            }
+        ]
+    }
+}
+```
+
+---
+
+* ### 用户积分记录
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=myscore](http://API\_DOMAIN/index.php?ctl=api_user&act=myscore)
+
+请求方式：get
+
+参 数：
+
+* 页数 page int
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": {
+        "total": "1000", //总积分
+        "lists": [
+            {
+                "id": "130", //记录id
+                "log_info": "支持流浪猫的家—爱天使公益咖啡馆的重建需要大家的力量！项目支付", //备注
+                "log_time": "1352231631", //时间
+                "score": "0.00", //积分
+                "from_user_id": "0" //积分来自哪个用户
+            }
+        ]
+    }
+}
+```
+
+
 
 
 
