@@ -83,6 +83,7 @@
             "mobile": "123", //用户手机号
             "thirdbind": "0", //第三方绑定类别 0-未绑定；1-qq；2-微信；3-微博
             "thirdnum": "", //第三方账号
+            "rec_image": "http://www.zc.local.com/public/images/qrcode/user_19.png", //用户推荐二维码地址
             "head": "/public/avatar/default/noavatar_9.JPG", //用户头像地址
             "bank": "(尾号)" //用户银行账号
         },
@@ -617,14 +618,21 @@ upload[](文件资源类型)
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_renzheng&act=guanlixiugai](http://API\_DOMAIN/index.php?ctl=api_renzheng&act=guanlixiugai)
 
-请求方式：get
+请求方式：post
 
 参 数：
 
 * 项目deal_id：deal_id int 项目id执行操作
-* 功能分类type ty:pe  int  type=2: 编辑项目 type=3: 修改时间 type=4:更新动态  type=8:删除项目
+* 功能分类type type  int  type=2: 编辑项目  type=3: 修改时间 type=4:更新动态  type=8:删除项目
 * 
-* 
+* 目标金额：limit_price 
+* 描述：descrip
+* 描述图片：img array
+* 项目开始时间:begin_time
+* 项目结束时间：end_time
+* 项目天数:deal_days
+
+ 
 
 返 回 值：
 
@@ -1286,7 +1294,138 @@ upload[](文件资源类型)
     }
 }
 ```
+* ### 注册
 
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_register&act=register](http://API\_DOMAIN/index.php?ctl=api_register&act=register)
+
+请求方式：get
+
+参 数：
+
+* 手机号: mobile
+* 手机验证码:vertify
+* 密码：password
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+		'mobile':18700313312,
+		'vertify':222222,
+		'msg':短信发送成功，
+	
+	]
+}
+
+```
+
+---
+* ### 短信接口
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_register&act=duanxin](http://API\_DOMAIN/index.php?ctl=api_register&act=duanxin)
+
+请求方式：get
+
+参 数：
+
+* 手机号: mobile
+
+返 回 值：
+、、、
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+		'mobile':18700313312,
+		'vertify':222222,
+		'msg':短信发送成功，
+	
+	]
+}
+
+
+、、、
+
+* ### 账号密码登录
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_login&act=zhanghaomima](http://API\_DOMAIN/index.php?ctl=api_login&act=zhanghaomima)
+
+请求方式：get
+
+参 数：
+
+* 手机号: mobile
+* 密码：password
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+		'id':13,
+		'user_pwd':222222dad,
+		'user_name':'张三丰'，
+	
+	]
+}
+
+```
+
+* ### 快速登录登录
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_login&act=kuaisudenglu](http://API\_DOMAIN/index.php?ctl=api_login&act=kuaisudenglu)
+
+请求方式：get
+
+参 数：
+
+* 手机号: mobile
+* 手机验证码:vertify
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+		'id':13,
+		'user_pwd':222222dad,
+		'user_name':'张三丰'，
+	
+	]
+}
+
+```
+---
+
+* ### 登录短信接口
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_login&act=duanxin](http://API\_DOMAIN/index.php?ctl=api_login&act=duanxin)
+
+请求方式：get
+
+参 数：
+
+* 手机号: mobile
+
+返 回 值：
+、、、
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": [
+		'mobile':18700313312,
+		'vertify':222222,
+		'msg':短信发送成功，
+	
+	]，
+}
 
 
 
