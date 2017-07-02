@@ -542,6 +542,135 @@ upload[](文件资源类型)
 
 ```
 
+
+
+* ### 管理项目
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_renzheng&act=guanli](http://API\_DOMAIN/index.php?ctl=api_renzheng&act=guanli)
+
+请求方式：get
+
+参 数：
+
+* 项目deal_id：deal_id int 项目id执行操作
+* 功能分类type: type  int type=1:支持记录  type=2: 编辑项目 type=3: 修改时间 type=4:更新动态 type=6:联系客服 type=7:提前结束 type=8:删除项目
+* 
+
+
+
+返 回 值：
+
+```
+
+* type =1
+
+{
+
+ 	"status_code": 200,
+    "message": "成功",
+    "data": [{
+			'support_count'：3,  //支持人数
+		    'support_amount：3000,// 支持金额
+		    'focus_count'=>2 //关注数
+			}]
+}
+
+* type =2
+
+{
+
+ 	"status_code": 200,
+    "message": "成功",
+    "data": [{
+				'limit_price':30000, //目标金额
+                'tags'：自己的咖啡馆',      //资金用途
+                'deal_days'：30,//众筹天数
+                'begin_time'：1338888,//开始时间
+                'description'：'胜利大街了收到了',//描述
+                'log_info'：'就到了家里的事',//筹款动态
+                'create_time':'13333',//创建时间
+                'user_name'：'fanwe',//昵称
+                'image':'./public/attachment/201211/07/11/85a7d1e781bfb8812271b6f6f1bee91d25.jpg',//上传的图片
+                'source_vedio':'http://www.tudou.com/v/153527563/v.swf',//上传的视频
+                'vedio':'http://www.tudou.com/listplay/i67lCgQt5nQ/i9toRdup3ok.html',//视频资源
+			}]
+}
+
+
+* type =3
+
+{
+
+ 	"status_code": 200,
+    "message": "成功",
+    "data": [{
+				'deal_days'：30, //众筹天数
+                'begin_time':1343555,// 开始时间
+                'end_time':145555//结束时间
+			}]
+}
+
+
+```
+
+* ### 项目修改提交接口
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_renzheng&act=guanlixiugai](http://API\_DOMAIN/index.php?ctl=api_renzheng&act=guanlixiugai)
+
+请求方式：get
+
+参 数：
+
+* 项目deal_id：deal_id int 项目id执行操作
+* 功能分类type ty:pe  int  type=2: 编辑项目 type=3: 修改时间 type=4:更新动态  type=8:删除项目
+* 
+* 
+
+返 回 值：
+
+```
+
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
+* ### 项目验证接口
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_renzheng&act=insert_renzheng](http://API\_DOMAIN/index.php?ctl=api_renzheng&act=insert_renzheng)
+
+请求方式：get
+
+参 数：
+
+* 项目deal_id：deal_id int 项目id执行操作
+* 认证类型type :type enum：0，1 默认为0；例如：个人认证；组织认证
+* 真实姓名/组织名称：real_name: text 个人或者组织的真实姓名
+* 省份证号id_card
+* 手机号/联系方式 telphone	
+* 手持身份证照片/组织资质证明：id_card_img
+* 银行卡bank_id
+* 资金用途照片certify_img1 ----certify_img8 
+* 认证类型type 默认是0 个人  1是单位
+* 
+
+返 回 值：
+
+```
+
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": []
+}
+
+```
+
+
+
 ---
 
 * ### 获取已绑定银行卡列表
