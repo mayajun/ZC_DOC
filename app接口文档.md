@@ -989,7 +989,7 @@ upload[](文件资源类型)
 
 接口地址：[http://API\_DOMAIN/index.php?ctl=api_insurance&act=createInsurance](http://API\_DOMAIN/index.php?ctl=api_insurance&act=createInsurance)
 
-请求方式：get
+请求方式：POST
 
 参 数：
 
