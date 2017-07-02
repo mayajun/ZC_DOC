@@ -1128,6 +1128,36 @@ upload[](文件资源类型)
 }
 ```
 
+---
+
+* ### 我的下线创造的积分，钱，红包，我的下线
+
+接口地址：[http://API\_DOMAIN/index.php?ctl=api_user&act=myChild](http://API\_DOMAIN/index.php?ctl=api_user&act=myChild)
+
+请求方式：get
+
+参 数：
+
+返 回 值：
+
+```
+{
+    "status_code": 200,
+    "message": "成功",
+    "data": {
+        "score": "0", //积分
+        "rebate": "2", //返利的钱
+        "red": "6.00", //返利的红包
+        "child": [
+            {
+                "id": "19", //下线ID
+                "user_name": "test" //下线用户名
+            }
+        ]
+    }
+}
+```
+
 
 
 
