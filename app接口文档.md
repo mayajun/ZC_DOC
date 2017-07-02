@@ -83,6 +83,7 @@
             "mobile": "123", //用户手机号
             "thirdbind": "0", //第三方绑定类别 0-未绑定；1-qq；2-微信；3-微博
             "thirdnum": "", //第三方账号
+            "rec_image": "http://www.zc.local.com/public/images/qrcode/user_19.png", //用户推荐二维码地址
             "head": "/public/avatar/default/noavatar_9.JPG", //用户头像地址
             "bank": "(尾号)" //用户银行账号
         },
